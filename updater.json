@@ -1,11 +1,11 @@
-﻿{
+{
   "version": "1.0.0",
-  "notes": "الإصدار الأولي من نظام PharmaSys لإدارة الصيدلية.",
-  "pub_date": "2026-09-21T13:00:00Z",
+  "notes": "تحديث جديد لنظام PharmaSys.",
+  "pub_date": "2026-09-23T10:50:43.183Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "",
-      "url": "https://github.com/MahmoudGamal-AI/pharmasys-releases/releases/download/v1.0.0/PharmaSys_1.0.0_x64-setup.nsis.zip"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRdkFaVlpzUWFTZVNNdnNYR0RqRjNJU0FYRGNBUmhHRUN4dGhsdHpiUG1GN1JWYXFwM1IwcEhRY1dIYXFXT05FODd5dkk2WXZ6dXlFaEZvbDhsY0U2UzBKYmxFalNHVEFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMTYwNjQyCWZpbGU6UGhhcm1hU3lzXzEuMC4wX3g2NC1zZXR1cC5leGUKYTQ3Y1ltcWRRMzdjUXJmQ1Yxb0VqUGpGOStwNTJraHRSM3lIMjhqWlhNRWkvTE1lVk8rcSs4cXlCRUxhcmxsZzRPOTNJaE5FL3FkV0pJYmR2d0ZYQlE9PQo=",
+      "url": "https://github.com/MahmoudGamal-AI/pharmasys-releases/releases/download/v1.0.0/PharmaSys_1.0.0_x64-setup.exe"
     }
   }
 }

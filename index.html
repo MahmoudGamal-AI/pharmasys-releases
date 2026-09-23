@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmaSys | الجيل الجديد لإدارة الصيدليات</title>
+    <meta name="description" content="نظام PharmaSys: أسرع وأذكى نظام لإدارة مبيعات ومخزون الصيدليات بتكنولوجيا حديثة وحماية فائقة.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Tajawal', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f4fbfe',
+                            100: '#e7f5fb',
+                            200: '#caebf7',
+                            300: '#9cdbf0',
+                            400: '#67c3e5',
+                            500: '#40a7cd',
+                            600: '#3286ab',
+                            700: '#2c6d8d',
+                            800: '#275b75',
+                            900: '#244c63',
+                            950: '#173243',
+                        },
+                        dark: {
+                            bg: '#0B0F19',
+                            card: '#111827',
+                            border: '#1F2937'
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'blob': 'blob 7s infinite',
+                        'glow': 'glow 3s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 15px rgba(64, 167, 205, 0.2)' },
+                            '100%': { boxShadow: '0 0 30px rgba(64, 167, 205, 0.6)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0B0F19;
+            color: #F9FAFB;
+            overflow-x: hidden;
+        }
+        .grid-bg {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+        }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #40a7cd 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Modern Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0F19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1F2937;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #374151;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-500 selection:text-white relative">
+
+    <!-- Ambient Background Effects -->
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <div class="absolute inset-0 grid-bg"></div>
+        <div class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-brand-600/20 rounded-full blur-[120px] animate-blob"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[150px] animate-blob" style="animation-delay: 2s;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="glass-card border-b-0 border-white/5 mx-4 mt-4 rounded-2xl px-6 py-4">
+            <div class="max-w-7xl mx-auto flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-400 to-brand-600 flex items-center justify-center shadow-lg shadow-brand-500/30">
+                        <i class="ph-bold ph-first-aid text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-black tracking-tight text-white">Pharma<span class="text-brand-400">Sys</span></span>
+                </div>
+                
+                <div class="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-300">
+                    <a href="#features" class="hover:text-white transition-colors">المميزات</a>
+                    <a href="#security" class="hover:text-white transition-colors">الحماية</a>
+                    <a href="#download" class="hover:text-white transition-colors">التحميل</a>
+                </div>
+
+                <a href="#download" class="hidden md:flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/10 text-white px-5 py-2 rounded-xl text-sm font-bold transition-all">
+                    تنزيل النسخة
+                    <i class="ph-bold ph-download-simple"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="relative z-10 pt-40 pb-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Text Content -->
+                <div class="lg:w-1/2 text-center lg:text-right space-y-8">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-brand-400 text-sm font-bold border-brand-500/30 shadow-[0_0_15px_rgba(64,167,205,0.15)] animate-glow">
+                        <span class="relative flex h-3 w-3">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-500"></span>
+                        </span>
+                        الإصدار الرسمي 1.0.0 متاح الآن
+                    </div>
+                    
+                    <h1 class="text-5xl lg:text-7xl font-black leading-[1.1] text-white">
+                        مستقبل صيدليتك، <br/>
+                        <span class="gradient-text">بين يديك اليوم.</span>
+                    </h1>
+                    
+                    <p class="text-lg lg:text-xl text-gray-400 font-medium leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        تخلى عن الأنظمة البطيئة والمعقدة. اكتشف قوة الأداء الفائق مع PharmaSys المبني بتقنية Rust لضمان استقرار وسرعة لا مثيل لها في إدارة المبيعات والمخزون.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start pt-4" id="download">
+                        <a href="https://github.com/MahmoudGamal-AI/pharmasys-releases/releases/download/v1.0.0/PharmaSys_1.0.0_x64-setup.exe" 
+                           class="w-full sm:w-auto bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white font-bold py-4 px-8 rounded-2xl shadow-lg shadow-brand-500/25 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 text-lg border border-brand-400/50 group">
+                            <i class="ph-bold ph-windows-logo text-2xl group-hover:scale-110 transition-transform"></i>
+                            تحميل لنظام الويندوز
+                        </a>
+                        <a href="#features" class="w-full sm:w-auto glass-card hover:bg-white/10 text-white font-bold py-4 px-8 rounded-2xl transition-all flex items-center justify-center gap-2 text-lg">
+                            استكشف النظام
+                            <i class="ph-bold ph-arrow-down"></i>
+                        </a>
+                    </div>
+                    <div class="flex items-center justify-center lg:justify-start gap-4 text-sm text-gray-500 font-medium pt-2">
+                        <div class="flex items-center gap-1.5"><i class="ph-fill ph-check-circle text-brand-500"></i> يدعم x64</div>
+                        <div class="flex items-center gap-1.5"><i class="ph-fill ph-check-circle text-brand-500"></i> ويندوز 10/11</div>
+                        <div class="flex items-center gap-1.5"><i class="ph-fill ph-check-circle text-brand-500"></i> تثبيت آمن بضغطة</div>
+                    </div>
+                </div>
+                
+                <!-- 3D / Dashboard Visual -->
+                <div class="lg:w-1/2 relative animate-float">
+                    <!-- Glow behind image -->
+                    <div class="absolute inset-0 bg-gradient-to-tr from-brand-500/20 to-purple-500/20 blur-3xl transform scale-90 rounded-full"></div>
+                    
+                    <div class="relative glass-card rounded-3xl p-2 shadow-2xl border border-white/10 transform perspective-1000 rotate-y-[-10deg] rotate-x-[5deg]">
+                        <div class="absolute top-4 right-4 flex gap-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Dashboard" class="rounded-2xl w-full object-cover shadow-inner opacity-90 mix-blend-screen grayscale-[20%] sepia-[10%]">
+                        
+                        <!-- Floating badges -->
+                        <div class="absolute -left-6 top-1/4 glass-card p-4 rounded-2xl flex items-center gap-4 shadow-xl shadow-black/50 border border-white/10">
+                            <div class="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center text-green-400">
+                                <i class="ph-bold ph-trend-up text-2xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-400 font-medium">المبيعات اليومية</p>
+                                <p class="text-xl font-bold text-white">+ 24,500 ج.م</p>
+                            </div>
+                        </div>
+                        
+                        <div class="absolute -right-8 bottom-1/4 glass-card p-4 rounded-2xl flex items-center gap-4 shadow-xl shadow-black/50 border border-white/10">
+                            <div class="w-12 h-12 rounded-full bg-brand-500/20 flex items-center justify-center text-brand-400">
+                                <i class="ph-bold ph-shield-check text-2xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-400 font-medium">حالة النظام</p>
+                                <p class="text-xl font-bold text-white">مشفر ومحمي 100%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bento Grid Features -->
+    <section id="features" class="relative z-10 py-24 bg-dark-bg/50 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 space-y-4">
+                <h2 class="text-sm font-black text-brand-400 uppercase tracking-widest">إمكانيات غير محدودة</h2>
+                <h3 class="text-4xl md:text-5xl font-black text-white">صُمم ليكون <span class="gradient-text">الأفضل</span></h3>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Large Feature -->
+                <div class="md:col-span-2 glass-card p-8 rounded-3xl group hover:border-brand-500/50 transition-colors">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-500/20 to-brand-500/5 flex items-center justify-center mb-6 border border-brand-500/20 group-hover:scale-110 transition-transform">
+                        <i class="ph-bold ph-rocket text-3xl text-brand-400"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-white mb-3">سرعة استجابة فورية (Rust Backend)</h4>
+                    <p class="text-gray-400 font-medium leading-relaxed">
+                        بفضل هندسة النظام المبنية على لغة Rust المخصصة للأنظمة فائقة السرعة، لن تعاني أبداً من بطء أو تعليق عند إدخال مئات الفواتير أو البحث في قاعدة بيانات تضم آلاف الأدوية.
+                    </p>
+                </div>
+                
+                <div class="glass-card p-8 rounded-3xl group hover:border-purple-500/50 transition-colors">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-500/5 flex items-center justify-center mb-6 border border-purple-500/20 group-hover:scale-110 transition-transform">
+                        <i class="ph-bold ph-arrows-clockwise text-3xl text-purple-400"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-white mb-3">تحديثات هوائية ذكية</h4>
+                    <p class="text-gray-400 font-medium leading-relaxed">
+                        لا حاجة لتثبيت الإصدارات الجديدة يدوياً. النظام يكتشف، يُحمل، ويُثبت التحديثات بضغطة زر.
+                    </p>
+                </div>
+                
+                <div class="glass-card p-8 rounded-3xl group hover:border-blue-500/50 transition-colors">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-500/5 flex items-center justify-center mb-6 border border-blue-500/20 group-hover:scale-110 transition-transform">
+                        <i class="ph-bold ph-lock-key text-3xl text-blue-400"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-white mb-3">قاعدة بيانات مشفرة</h4>
+                    <p class="text-gray-400 font-medium leading-relaxed">
+                        بياناتك المالية مخزنة محلياً ومشفرة بالكامل. لا أحد يستطيع الوصول إليها سوى صاحب الصلاحية.
+                    </p>
+                </div>
+
+                <div class="md:col-span-2 glass-card p-8 rounded-3xl group hover:border-emerald-500/50 transition-colors relative overflow-hidden">
+                    <div class="absolute right-0 top-0 w-64 h-64 bg-emerald-500/10 blur-[80px]"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 flex items-center justify-center mb-6 border border-emerald-500/20 group-hover:scale-110 transition-transform">
+                            <i class="ph-bold ph-chart-line-up text-3xl text-emerald-400"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-3">تقارير مالية وجرد ذكي</h4>
+                        <p class="text-gray-400 font-medium leading-relaxed max-w-lg">
+                            راقب أرباحك، مبيعاتك، ونواقص الأدوية عبر لوحات تحكم متطورة ورسوم بيانية دقيقة تمنحك رؤية شاملة لصيدليتك في ثوانٍ معدودة.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security & Tech Stack Section -->
+    <section id="security" class="relative z-10 py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="glass-card rounded-[3rem] p-12 text-center border-t border-l border-white/10 relative overflow-hidden">
+                <!-- Inner Glow -->
+                <div class="absolute inset-0 bg-gradient-to-b from-brand-900/40 to-transparent"></div>
+                
+                <div class="relative z-10">
+                    <i class="ph-fill ph-shield-check text-7xl text-brand-400 mb-6 drop-shadow-[0_0_15px_rgba(64,167,205,0.5)]"></i>
+                    <h3 class="text-3xl md:text-4xl font-black text-white mb-6">أمان بمستوى البنوك (Bank-Grade Security)</h3>
+                    <p class="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed mb-10">
+                        كل تحديث يصلك يكون **موقعاً رقمياً** (Digital Signature) بمفاتيح تشفير خاصة من المطور (Tauri Signer). هذا يعني أنه من المستحيل أن يتعرض البرنامج لاختراق أو تعديل من أطراف خارجية أثناء التحميل.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <div class="glass-card px-6 py-3 rounded-full flex items-center gap-2 text-white font-bold border-white/5">
+                            <i class="ph-bold ph-code text-brand-400"></i> React + Vite
+                        </div>
+                        <div class="glass-card px-6 py-3 rounded-full flex items-center gap-2 text-white font-bold border-white/5">
+                            <i class="ph-bold ph-cpu text-brand-400"></i> Rust Backend
+                        </div>
+                        <div class="glass-card px-6 py-3 rounded-full flex items-center gap-2 text-white font-bold border-white/5">
+                            <i class="ph-bold ph-database text-brand-400"></i> Local SQLite
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-white/5 bg-dark-bg/80 backdrop-blur-md pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex justify-center items-center gap-3 mb-6">
+                <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center shadow-lg">
+                    <i class="ph-bold ph-first-aid text-white text-sm"></i>
+                </div>
+                <span class="text-xl font-black tracking-tight text-white">Pharma<span class="text-brand-400">Sys</span></span>
+            </div>
+            <p class="text-gray-500 font-medium mb-8">
+                أقوى نظام إدارة صيدليات مصمم لتوفير وقتك وزيادة أرباحك.
+            </p>
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-600 text-sm font-semibold">
+                    جميع الحقوق محفوظة &copy; 2026 PharmaSys
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-gray-400 hover:text-white hover:border-white/20 transition-all">
+                        <i class="ph-fill ph-github-logo text-xl"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-gray-400 hover:text-white hover:border-white/20 transition-all">
+                        <i class="ph-fill ph-twitter-logo text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Navbar scroll effect -->
+    <script>
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2');
+                navbar.firstElementChild.classList.add('shadow-xl', 'bg-dark-card/90');
+            } else {
+                navbar.classList.remove('py-2');
+                navbar.firstElementChild.classList.remove('shadow-xl', 'bg-dark-card/90');
+            }
+        });
+    </script>
+</body>
+</html>
