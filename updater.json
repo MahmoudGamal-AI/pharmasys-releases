@@ -1,11 +1,11 @@
 {
-  "version": "1.0.7",
+  "version": "1.0.8",
   "notes": "تحديث جديد لنظام PharmaSys.",
-  "pub_date": "2026-09-26T16:08:48.979Z",
+  "pub_date": "2026-09-26T16:34:44.933Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRdkFaVlpzUWFTZVpNUnREYTNKQmZFY0Jya0RYT1JseEpWZjdLU3ZYaTRWelFwRlJqdlQ5Y01CWkpkemQ0V2pQWXZmTGN0cFNGZ0Z2dzhmM1UzaUduckVQelZ6RVQveXdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNDM4OTI3CWZpbGU6UGhhcm1hU3lzXzEuMC43X3g2NC1zZXR1cC5leGUKTUZxQ1ExK0pnU2s5b1FKaWp3M2ZBWHZBZ1VXZmxZWStIenJSVkNiZmZjQXVNS2svb3dtUnpQaGk4VWZLK3lkM21uUlVIUTZELzV4eE9wcWduTUxrQWc9PQo=",
-      "url": "https://github.com/MahmoudGamal-AI/pharmasys-releases/releases/download/v1.0.7/PharmaSys_1.0.7_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRdkFaVlpzUWFTZVg5V2o0L1FVOWZPR0dDZEVHckFUbU12UlA1RlI5NWdEL2QzdlR6dzhzb21iN3BRRXYrdk10VmkxMlRVdGg3dE1VREU0eklEM3Zpd1d6dUdEaHBHREE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNDQwNDY2CWZpbGU6UGhhcm1hU3lzXzEuMC44X3g2NC1zZXR1cC5leGUKUUthdWkzMDhnNVdyaTFVa29hRUFZVU5MYys5aks2WWVKUnQ0bjlIQTFWZ3FrRGxHakF0NXFWemtaU0xBUURadUlTNW1IQUZ2cE1QbmRZdUI3Y1UxQUE9PQo=",
+      "url": "https://github.com/MahmoudGamal-AI/pharmasys-releases/releases/download/v1.0.8/PharmaSys_1.0.8_x64-setup.exe"
     }
   }
 }
